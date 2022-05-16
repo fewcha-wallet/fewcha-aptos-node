@@ -147,7 +147,7 @@ and add (`vim` editor):
 + - name: api
 +   port: 80
 +   protocol: TCP
-+   targetPort: 8180
++   targetPort: 8080
 ```
 
 Then save it with `esc` and `:wq`
