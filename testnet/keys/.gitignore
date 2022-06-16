@@ -7,7 +7,7 @@ layout.yaml
 insert.sh
 framework
 
-#
 fewcha.yaml
-aptos-testnet-9.yaml
-aptos-testnet-11.yaml
+aptos-testnet-*.yaml
+
+0-config.sh
