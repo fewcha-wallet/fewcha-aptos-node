@@ -75,8 +75,8 @@ Fullnode node address: xxx.elb.ap-southeast-1.amazonaws.com
 
 Use that `addresses` at step 5. with ports
 
-- Validator: `80`, `6080`, `9101`
-- Fullnode: `80`, `6082`, `9101`
+- Validator: `80`, `6180`, `9101`
+- Fullnode: `80`, `6182`, `9101`
 
 *can check by using: `kubectl get svc` (`LoadBalancer`), example:*
 
@@ -118,36 +118,4 @@ stake_amount: 1
 
 ## Origin
 
-- Learn more, and origin: https://aptos.dev/tutorials/validator-node/run-validator-node-using-aws/
-
-## Issue
-
-If you don't see port `80:xxxxx/TCP` of `...-aptos-node-validator-lb` when run `kubectl get svc`
-
-You should run a change:
-
-```bash
-kubectl edit svc <your codename>-aptos-node-validator-lb
-```
-
-and add (`vim` editor):
-
-```diff
-  ports:
-  - name: validator
-    nodePort: 30910
-    port: 6180
-    protocol: TCP
-    targetPort: 6180
-  - name: metrics
-    nodePort: 30011
-    port: 9101
-    protocol: TCP
-    targetPort: 9102
-+ - name: api
-+   port: 80
-+   protocol: TCP
-+   targetPort: 8080
-```
-
-Then save it with `esc` and `:wq`
+- Learn more, and origin: https://aptos.dev/nodes/validator-node/run-validator-node-using-aws

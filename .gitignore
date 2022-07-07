@@ -2,3 +2,4 @@
 .terraform
 .terraform.lock.hcl
 main.tf
+0-config.sh

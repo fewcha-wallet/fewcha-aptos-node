@@ -9,5 +9,6 @@ framework
 
 fewcha.yaml
 aptos-testnet-*.yaml
+aptos-fewcha-*.yaml
 
 0-config.sh
